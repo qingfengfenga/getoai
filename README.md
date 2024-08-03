@@ -18,7 +18,11 @@
 
 理论上 Windows、Linux、MacOS 都支持。
 
-x86 和 ARM 也基本支持 
+x86 和 ARM 也基本支持。
+
+目前仅测试过 Nvidia GPU（NVIDIA GeForce RTX 2080 Ti） 和 CPU。
+
+AMD、Apple、Intel 等 GPU 未进行过测试，兼容性请以对应模型工具为准。
 
 ### 性能
 
