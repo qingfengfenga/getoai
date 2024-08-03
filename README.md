@@ -4,17 +4,21 @@
 
 ## 概述
 
+### 功能特性
+
 - 使用 [New-API](https://github.com/Calcium-Ion/new-api) / [One-API](https://github.com/songquanpeng/one-api) 集中管理 Api、用户认证、额度管理等。
 
-- 使用 [Dockge](https://github.com/louislam/dockge)、[Helm Dashboard](https://github.com/komodorio/helm-dashboard) 等可视化工具管理本地和远程工作负载
+- 使用 [Dockge](https://github.com/louislam/dockge)、[Helm Dashboard](https://github.com/komodorio/helm-dashboard) 等可视化工具管理本地和远程工作负载。
 
-- 使用 [Ollama](https://github.com/ollama/ollama)、[stable-diffusion-webui-docker](https://github.com/AbdBarho/stable-diffusion-webui-docker)、[midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 等模型管理和 Api 代理工具
+- 使用 [Ollama](https://github.com/ollama/ollama)、[stable-diffusion-webui-docker](https://github.com/AbdBarho/stable-diffusion-webui-docker)、[midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 等模型管理和 Api 代理工具。
 
 - ChatUI 和模型 Api 服务，预置到 Dockge 中纳管，用户只需通过 WebUI 即可管理绝大部分服务，实现开箱即用。
 
 ### 兼容性
 
 理论上 Windows、Linux、MacOS 都支持。
+
+x86 和 ARM 也基本支持 
 
 ### 性能
 
@@ -24,23 +28,23 @@ Windows 下 Docker Desktop 容器性能损耗严重，尤其是大型模型加�
 
 或者使用非容器化方式运行，这不在仓库支持范围，但是依然可以使用提供的 New-api 管理 api 部分。
 
-## 支持列表
+### 支持列表
 
-### 模型工具
+#### 模型工具
 
-| 支持    | 模型工具                       | New-api   | Dockge | Helm Dashboard |
-|:-------:|:-----------------------------:|:---------:|-------:|---------------:|
-| - [x]   | Ollama                        | - [x]     | - [x]  |    - []        |
-| - [x]   | stable-diffusion-webui-docker | - [x]     | - [x]  |    - []        |
-| - [x]   | midjourney-proxy              | - [x]     | - [x]  |    - []        |
+| 支持     | 模型工具                       | New-api   | Dockge | Helm Dashboard |
+|:--------:|:-----------------------------:|:---------:|:-------:|:-------------:|
+|  ✔️     | Ollama                        |  ✔️       |  ✔️    |    ✖️        |
+|  ✔️     | stable-diffusion-webui-docker |  ✔️       |  ✔️    |    ✖️        |
+|  ✔️     | midjourney-proxy              |  ✔️       |  ✔️    |    ✖️        |
 
-### Chat
+#### ChatUI
 
-| 支持    | 模型工具                      | New-api   | Dockge  | Helm Dashboard |
-|:-------:|:----------------------------:|:---------:|--------:|---------------:|
-| - [x]   | chatgpt-next-web             | - [x]     | - [x]   |    - []        |
-| - [x]   | chatgpt-web-midjourney-proxy | - [x]     | - [x]   |    - []        |
-| - [x]   | lobechat                     | - [x]     | - [x]   |    - []        |
+| 支持     | ChatUI                      | New-api   | Dockge  | Helm Dashboard |
+|:--------:|:----------------------------:|:---------:|:-------:|:-------------:|
+|  ✔️     | chatgpt-next-web             |  ✔️       |  ✔️     |    ✖️        |
+|  ✔️     | chatgpt-web-midjourney-proxy |  ✔️       |  ✔️     |    ✖️        |
+|  ✔️     | lobechat                     |  ✔️       |  ✔️     |    ✖️        |
 
 ## 开始使用
 
@@ -54,7 +58,7 @@ Windows 下 Docker Desktop 容器性能损耗严重，尤其是大型模型加�
 
 - 可访问模型仓库，部分服务初始化会下载文件或模型
 
-### 启动服务
+### 启动
 
 克隆本存储库，克隆完成后，进入文件夹
 
@@ -87,4 +91,29 @@ docker-compose up -d
 
 - new-api：http://localhost:3000
 
-可通过 Dockge 创建工作负载，并通过 New-api 管理Api
+
+可通过 Dockge 创建 模型和 ChatUI 工作负载，通过 New-api 管理Api。
+
+
+## 鸣谢
+
+- [New-API](https://github.com/Calcium-Ion/new-api) & [One-API](https://github.com/songquanpeng/one-api) 
+
+- [Dockge](https://github.com/louislam/dockge)
+
+- [Helm Dashboard](https://github.com/komodorio/helm-dashboard) 
+
+- [Ollama](https://github.com/ollama/ollama)
+
+- [stable-diffusion-webui-docker](https://github.com/AbdBarho/stable-diffusion-webui-docker)
+
+- [midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 
+
+- [ChatGPT-Next-Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web)
+
+- [chatgpt-web-midjourney-proxy](https://github.com/qingfengfenga/chatgpt-web-midjourney-proxy)
+
+- [lobe-chat](https://github.com/lobehub/lobe-chat)
+
+- [open-webui](https://github.com/open-webui/open-webui)
+
