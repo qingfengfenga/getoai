@@ -96,8 +96,17 @@ docker-compose up -d
 - new-api：http://localhost:3000 （初始管理员 admin/admin）
 
 
-可通过 Dockge 创建 模型和 ChatUI 工作负载，通过 New-api 管理Api。
+可通过 Dockge 创建 模型和 ChatUI 工作负载，通过 New-api 管理 Api 。
 
+Dockge 页面图片
+
+![dockge-home](./docs/img/dockge-home.png)
+
+![dockge-app](./docs/img/dockge-app.png)
+
+![dockge-app-bash](./docs/img/dockge-app-bash.png)
+
+![dockge-console](./docs/img/dockge-console.png)
 
 ## 鸣谢
 
