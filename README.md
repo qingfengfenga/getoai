@@ -76,7 +76,7 @@ cp .env.example .env
 # FULL path only. No relative path (MUST)
 # Git_DIR + volumes\dockge\opt\stacks
 # eg: D:\getoai\volumes\dockge\opt\stacks
-OPT_STACKS_DIR=D:\Me\getoai\volumes\dockge\opt\stacks
+OPT_STACKS_DIR=D:\getoai\volumes\dockge\opt\stacks
 ```
 
 启动服务
@@ -89,7 +89,7 @@ docker-compose up -d
 
 - dockge：http://localhost:5001
 
-- new-api：http://localhost:3000
+- new-api：http://localhost:3000 （初始管理员 admin/admin）
 
 
 可通过 Dockge 创建 模型和 ChatUI 工作负载，通过 New-api 管理Api。
