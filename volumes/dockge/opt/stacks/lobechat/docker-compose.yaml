@@ -1,0 +1,14 @@
+
+version: '3'
+
+services:
+  lobe-chat:
+    container_name: lobe-chat
+    image: lobehub/lobe-chat
+    ports:
+      - 3210:3210
+    environment:
+      TZ: Asia/Shanghai
+      OPENAI_API_KEY: sk-xxxx
+      OPENAI_PROXY_URL: 
+      ACCESS_CODE:

@@ -1,0 +1,20 @@
+# dockge
+volumes/dockge/data
+
+# chatgpt-web-midjourney-proxy
+volumes/dockge/opt/stacks/chatgpt-web-midjourney-proxy/*
+!volumes/dockge/opt/stacks/chatgpt-web-midjourney-proxy/docker-compose.yml
+
+# ollama
+volumes/dockge/opt/stacks/ollama/*
+!volumes/dockge/opt/stacks/ollama/docker-compose.yml
+
+# open-webui
+volumes/dockge/opt/stacks/open-webui/*
+!volumes/dockge/opt/stacks/open-webui/docker-compose.yml
+
+# new-api
+volumes/new-api
+
+# env
+.env

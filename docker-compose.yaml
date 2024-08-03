@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+
+  new-api:
+    image: calciumion/new-api:latest
+    # build: .
+    container_name: new-api
+    restart: always
+    command: --log-dir /app/logs
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./volumes/new-api/data:/data
+      - ./volumes/new-api/logs:/app/logs
+    environment:
+      - SQL_DSN=postgres://newapi:123456@db:5432/new-api  # 修改此行，或注释掉以使用 SQLite 作为数据库
+      - REDIS_CONN_STRING=redis://redis
+      - SESSION_SECRET=getoai  # 修改为随机字符串
+      - TZ=Asia/Shanghai
+#      - NODE_TYPE=slave  # 多机部署时从节点取消注释该行
+#      - SYNC_FREQUENCY=60  # 需要定期从数据库加载数据时取消注释该行
+#      - FRONTEND_BASE_URL=https://openai.justsong.cn  # 多机部署时从节点取消注释该行
+
+    depends_on:
+      - redis
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -q -O - http://localhost:3000/api/status | grep -o '\"success\":\\s*true' | awk -F: '{print $2}'" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+
+  db:
+    image: postgres:16.1-alpine3.19 # 数据库版本
+    restart: always
+    container_name: postgres  # 容器名
+    volumes:
+      - ./volumes/new-api/data/postgres:/var/lib/postgresql/data  #挂载目录，持久化存储
+    # ports:
+    #   - '5432:5432'
+    environment:
+      POSTGRES_USER: 'newapi'
+      POSTGRES_PASSWORD: '123456'   # 设置用户密码
+      POSTGRES_DB: 'new-api'
+      PGDATA: '/var/lib/postgresql/data/pgdata'  # 设置数据目录
+
+  dockge:
+    #image: louislam/dockge:1
+    image: louislam/dockge:1.4.2-1
+    restart: unless-stopped
+    ports:
+      - 5001:5001
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./volumes/dockge/data:/app/data
+      # Stacks Directory
+      # ⚠️ READ IT CAREFULLY. If you did it wrong, your data could end up writing into a WRONG PATH.
+      # ⚠️ 1. FULL path only. No relative path (MUST)
+      # ⚠️ 2. Left Stacks Path === Right Stacks Path (MUST)
+      - $OPT_STACKS_DIR:/opt/stacks
+    environment:
+      # Tell Dockge where to find the stacks
+      - DOCKGE_STACKS_DIR=/opt/stacks
+      # ⚠️This variable is used to correct the issue of containers created within the container not referencing the host path correctly. Please do not modify it
+      - OPT_STACKS_DIR=$OPT_STACKS_DIR
