@@ -4,11 +4,13 @@
 
 ## 概述
 
-使用 New-Api / One-Api 集中管理 Api、用户认证、额度管理等
+- 使用 [New-API](https://github.com/Calcium-Ion/new-api) / [One-API](https://github.com/songquanpeng/one-api) 集中管理 Api、用户认证、额度管理等。
 
-使用 Dockge、Helm Dashboard 等可视化工具管理本地和远程工作负载
+- 使用 [Dockge](https://github.com/louislam/dockge)、[Helm Dashboard](https://github.com/komodorio/helm-dashboard) 等可视化工具管理本地和远程工作负载
 
-ChatUI 和模型 Api 服务，预置到 Dockge 中纳管，用户只需通过 WebUI 即可管理绝大部分服务，实现开箱即用。
+- 使用 [Ollama](https://github.com/ollama/ollama)、[stable-diffusion-webui-docker](https://github.com/AbdBarho/stable-diffusion-webui-docker)、[midjourney-proxy](https://github.com/novicezk/midjourney-proxy) 等模型管理和 Api 代理工具
+
+- ChatUI 和模型 Api 服务，预置到 Dockge 中纳管，用户只需通过 WebUI 即可管理绝大部分服务，实现开箱即用。
 
 ### 兼容性
 
@@ -26,19 +28,19 @@ Windows 下 Docker Desktop 容器性能损耗严重，尤其是大型模型加�
 
 ### 模型工具
 
-| 支持    | 模型工具           | New-api  | Dockge | Helm Dashboard |
-|:------:|:------------------:|:--------:|------:|----------------:|
-| -[x]   | Ollama             | -[x]     | -[x]  |    -[]          |
-| -[x]   | stable-diffusion   | -[x]     | -[x]  |    -[]          |
-| -[x]   | midjourney-proxy   | -[x]     | -[x]  |    -[]          |
+| 支持    | 模型工具                       | New-api   | Dockge | Helm Dashboard |
+|:-------:|:-----------------------------:|:---------:|-------:|---------------:|
+| - [x]   | Ollama                        | - [x]     | - [x]  |    - []        |
+| - [x]   | stable-diffusion-webui-docker | - [x]     | - [x]  |    - []        |
+| - [x]   | midjourney-proxy              | - [x]     | - [x]  |    - []        |
 
 ### Chat
 
-| 支持    | 模型工具                     | New-api  | Dockge | Helm Dashboard  |
-|:------:|:----------------------------:|:--------:|-------:|----------------:|
-| -[x]   | chatgpt-next-web             | -[x]     | -[x]   |    -[]          |
-| -[x]   | chatgpt-web-midjourney-proxy | -[x]     | -[x]   |    -[]          |
-| -[x]   | lobechat                     | -[x]     | -[x]   |    -[]          |
+| 支持    | 模型工具                      | New-api   | Dockge  | Helm Dashboard |
+|:-------:|:----------------------------:|:---------:|--------:|---------------:|
+| - [x]   | chatgpt-next-web             | - [x]     | - [x]   |    - []        |
+| - [x]   | chatgpt-web-midjourney-proxy | - [x]     | - [x]   |    - []        |
+| - [x]   | lobechat                     | - [x]     | - [x]   |    - []        |
 
 ## 开始使用
 

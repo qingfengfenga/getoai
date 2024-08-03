@@ -1,5 +1,6 @@
 # dockge
-volumes/dockge/data
+volumes/dockge/data/*
+!volumes/dockge/data/.gitkeep
 
 # chatgpt-web-midjourney-proxy
 volumes/dockge/opt/stacks/chatgpt-web-midjourney-proxy/*
@@ -14,7 +15,8 @@ volumes/dockge/opt/stacks/open-webui/*
 !volumes/dockge/opt/stacks/open-webui/docker-compose.yml
 
 # new-api
-volumes/new-api
+volumes/new-api/*
+!volumes/new-api/.gitkeep
 
 # env
 .env
