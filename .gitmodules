@@ -1,3 +1,6 @@
 [submodule "volumes/dockge/opt/stacks/stable-diffusion-webui-docker"]
 	path = volumes/dockge/opt/stacks/stable-diffusion-webui-docker
 	url = https://github.com/qingfengfenga/stable-diffusion-webui-docker.git
+[submodule "volumes/dockge/opt/stacks/dockprom"]
+	path = volumes/dockge/opt/stacks/dockprom
+	url = https://github.com/qingfengfenga/dockprom.git
